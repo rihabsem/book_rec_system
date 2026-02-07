@@ -29,12 +29,10 @@ books["average_rating"] = books["average_rating"].fillna(books["average_rating"]
 books["num_pages"] = books["num_pages"].fillna(books["num_pages"].median())
 books["ratings_count"] = books["ratings_count"].fillna(books["ratings_count"].median())
 
-books.info()
-
 # text cleaning
 books['title'] = books['title'].apply(text_cleaning)
 books['authors'] = books['authors'].apply(text_cleaning)
 books['categories'] = books['categories'].apply(text_cleaning)
 books['description'] = books['description'].apply(text_cleaning)
-books.info()
+books["features"] = books["title"] + " " + books["authors"] + " " + books["categories"]
 books.to_csv("../data/books_clean.csv",index=False)
