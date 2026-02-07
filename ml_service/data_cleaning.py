@@ -36,5 +36,5 @@ books['title'] = books['title'].apply(text_cleaning)
 books['authors'] = books['authors'].apply(text_cleaning)
 books['categories'] = books['categories'].apply(text_cleaning)
 books['description'] = books['description'].apply(text_cleaning)
-
+books.info()
 books.to_csv("../data/books_clean.csv",index=False)
